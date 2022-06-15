@@ -1,7 +1,20 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+const path = require("path");
+const { defineConfig } = require("vite");
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()]
-})
+module.exports = defineConfig({
+  build: {
+    lib: {
+      entry: path.resolve(__dirname, "src/index.ts"),
+      name: "index",
+      fileName: (format) => `index.${format}.js`,
+    },
+    rollupOptions: {
+      external: ["react"],
+      output: {
+        globals: {
+          react: "React",
+        },
+      },
+    },
+  },
+});
