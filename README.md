@@ -13,8 +13,8 @@ https://yarnpkg.com/lang/en/docs/install/
 Clone and install Yarn dependencies:
 
 ```bash
-$ git clone git@github.com:jsdeveloperr/react-typscript-vite-redux-redux-saga-mui-boilerplate.git
-$ cd react-typscript-vite-redux-redux-saga-mui-boilerplate
+$ git clone https://github.com/jsdeveloperr/react-badge.git
+$ cd react-badge
 $ yarn
 ```
 
