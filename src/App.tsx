@@ -8,9 +8,9 @@ import useFaviconBadge from './hooks/use-favicon-badge'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [favicon, setFavicon] = useState('/src/assets/favicon.svg')
+  const [favicon, setFavicon] = useState('https://react-badge-favicon.vercel.app/src/assets/favicon.svg')
   const { drawBadge } = useFaviconBadge({
-    src: '/src/assets/favicon.svg',
+    src: 'https://react-badge-favicon.vercel.app/src/assets/favicon.svg',
     badgeValue: count,
   })
 
