@@ -4,13 +4,13 @@ import { Helmet } from "react-helmet"
 import logo from './logo.svg'
 import './App.css'
 import useFaviconBadge from './hooks/use-favicon-badge'
-// import FaviconBadge from './components/favicon-badge'
+import faviconSvg from "./assets/favicon.svg";
 
 function App() {
   const [count, setCount] = useState(0)
-  const [favicon, setFavicon] = useState('https://react-badge-favicon.vercel.app/src/assets/favicon.svg')
+  const [favicon, setFavicon] = useState(faviconSvg)
   const { drawBadge } = useFaviconBadge({
-    src: 'https://react-badge-favicon.vercel.app/src/assets/favicon.svg',
+    src: faviconSvg,
     badgeValue: count,
   })
 
