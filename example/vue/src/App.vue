@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { Head } from '@vueuse/head'
 import useFaviconBadge from '../../../src'
 
+
 const favicon = ref('/favicon.svg');
 const count = ref(0);
 

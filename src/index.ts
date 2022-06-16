@@ -10,17 +10,17 @@ export default function useFaviconBadge ({
   textColor?: string;
 }) {
   let faviconSize = 96;
-  const canvas = document.createElement("canvas");
+  const canvas = document?.createElement("canvas") || {};
   canvas.width = faviconSize;
   canvas.height = faviconSize;
 
-  const context = canvas.getContext("2d");
-  const img = document.createElement("img");
-  img.setAttribute("src", src);
+  const context = canvas?.getContext("2d");
+  const img = document?.createElement("img");
+  img?.setAttribute("src", src);
 
   const drawBadge: () => Promise<string> = () => {    
     return new Promise((resolve) => {
-      img.addEventListener('load', () => {
+      img?.addEventListener('load', () => {
         if (badgeValue && context) {
           context.drawImage(img, 0, 0, faviconSize, faviconSize);
   
