@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onBeforeUnmount } from 'vue'
 import { Head } from '@vueuse/head'
 import useFaviconBadge from '../../../src'
 
@@ -12,17 +12,26 @@ const setFavicon = (val: string) => {
 };
 
 const setCount = (val: number) =>  {
- count.value = val;
+  count.value = val;
 }
 
-const { drawBadge } = useFaviconBadge({
+const { drawBadge, destroyBadge } = useFaviconBadge({
   src: favicon.value,
   badgeValue: count.value,
 })
 
-drawBadge().then(badge => setFavicon(badge));
+const clicked = () => {
+  setCount(count.value + 1)
+  drawBadge().then(badge => setFavicon(badge))
+}
+
+drawBadge().then(badge => { console.log(badge); setFavicon(badge)});
 
 defineProps<{ msg: string }>()
+
+onBeforeUnmount(() => {
+  destroyBadge();
+})
 
 </script>
 
@@ -35,7 +44,7 @@ defineProps<{ msg: string }>()
   </Head>
   <img alt="Vue logo" src="./assets/logo.png" />
   <h1>{{ msg }}</h1>
-  <button type="button" @click="setCount(count + 1)">count is: {{ count }}</button>
+  <button type="button" @click="clicked()">count is: {{ count }}</button>
 </template>
 
 <style>

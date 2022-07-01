@@ -9,13 +9,15 @@ import faviconSvg from "./assets/favicon.svg";
 function App() {
   const [count, setCount] = useState(0)
   const [favicon, setFavicon] = useState(faviconSvg)
-  const { drawBadge } = useFaviconBadge({
+  const { drawBadge, destroyBadge } = useFaviconBadge({
     src: faviconSvg,
     badgeValue: count,
   })
 
   useEffect(() => {
     drawBadge().then(badge => setFavicon(badge));
+
+    return () => destroyBadge();
   }, [count]);
 
   return (
