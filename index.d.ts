@@ -1,4 +1,4 @@
-declare module 'react-favicon-badge' {
+declare module 'favicon-badge-notify' {
     function useFaviconBadge({}: {
         src: string;
         badgeValue: any;

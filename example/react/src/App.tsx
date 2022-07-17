@@ -3,13 +3,13 @@ import { Helmet } from "react-helmet"
 
 import logo from './logo.svg'
 import './App.css'
-import useFaviconBadge from '../../../src'
+import useFaviconBadgeNotify from '../../../src'
 import faviconSvg from "./assets/favicon.svg";
 
 function App() {
   const [count, setCount] = useState(0)
   const [favicon, setFavicon] = useState(faviconSvg)
-  const { drawBadge, destroyBadge } = useFaviconBadge({
+  const { drawBadge, destroyBadge } = useFaviconBadgeNotify({
     src: faviconSvg,
     badgeValue: count,
   })

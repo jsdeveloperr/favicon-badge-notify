@@ -1,4 +1,4 @@
-export default function useFaviconBadge ({
+export default function useFaviconBadgeNotify ({
   src,
   badgeValue,
   backgroundColor = "red",

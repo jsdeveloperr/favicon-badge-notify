@@ -1,31 +1,31 @@
-# :boom: Favicon Badge Notification
+# :boom: Favicon Badge Notify
 
 <p>Custom function adds a favicon and a badge</p>
 
 <div align="center">
 
-[![npm](https://img.shields.io/npm/v/favicon-badge-notification?style=flat-square)](https://www.npmjs.com/package/favicon-badge-notification)
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/favicon-badge-notification?style=flat-square)
-![npm](https://img.shields.io/npm/dt/favicon-badge-notification?style=flat-square)
-![GitHub license](https://img.shields.io/npm/l/favicon-badge-notification?style=flat-square)
+[![npm](https://img.shields.io/npm/v/favicon-badge-notify?style=flat-square)](https://www.npmjs.com/package/favicon-badge-notify)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/favicon-badge-notify?style=flat-square)
+![npm](https://img.shields.io/npm/dt/favicon-badge-notify?style=flat-square)
+![GitHub license](https://img.shields.io/npm/l/favicon-badge-notify?style=flat-square)
 
 </div>
 
 ## :books: Introduction
 
-Favicon Badge Notification implemented as custom function.
+Favicon Badge Notify implemented as custom function.
 
 ## :rocket: Example
 
-Check our [example](https://favicon-badge-notification.vercel.app/)
+Check our [example](https://react-favicon-badge.vercel.app/)
 
 ## :package: Installation
 
 ```bash
 # install with yarn
-yarn add favicon-badge-notification
+yarn add favicon-badge-notify
 # install with npm
-npm install favicon-badge-notification
+npm install favicon-badge-notify
 ```
 
 ## :sparkles: Reactjs example
@@ -34,13 +34,13 @@ npm install favicon-badge-notification
 import { useState, useEffect } from 'react'
 import { Helmet } from "react-helmet"
 
-import useFaviconBadge from 'favicon-badge-notification'
+import useFaviconBadgeNotify from 'favicon-badge-notify'
 import faviconSvg from "./assets/favicon.svg";
 
-function ReactFaviconBadge() {
+function ReactFaviconBadgeNotify() {
   const [count, setCount] = useState(0)
   const [favicon, setFavicon] = useState(faviconSvg)
-  const { drawBadge, destroyBadge } = useFaviconBadge({
+  const { drawBadge, destroyBadge } = useFaviconBadgeNotify({
     src: faviconSvg,
     badgeValue: count,
   })
@@ -71,7 +71,7 @@ function ReactFaviconBadge() {
   )
 }
 
-export default ReactFaviconBadge
+export default ReactFaviconBadgeNotify
 ```
 
 ## License
