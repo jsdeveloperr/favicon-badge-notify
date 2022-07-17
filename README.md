@@ -75,7 +75,7 @@ export default ReactFaviconBadgeNotify
 ```
 
 <p align="center" dir="auto">
-    <img src="https://github.com/jsdeveloperr/favicon-badge-notify/blob/master/example/react/src/assets/favicon-badge-notify.png" width="200" alt="Favicon Badge Notify" style="max-width: 100%;"> 
+    <img src="https://github.com/jsdeveloperr/favicon-badge-notify/blob/master/example/react/src/assets/favicon-badge-notify.png" width="150" alt="Favicon Badge Notify" style="max-width: 100%;"> 
 </p>
 
 ## License
