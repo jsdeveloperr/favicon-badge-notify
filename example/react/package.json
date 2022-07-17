@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@types/react-helmet": "^6.1.5",
-    "favicon-badge-notify": "^1.0.0",
+    "favicon-badge-notify": "^1.1.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-helmet": "^6.1.0"
