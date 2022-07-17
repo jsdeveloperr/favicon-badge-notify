@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"
 
 import logo from './logo.svg'
 import './App.css'
-import useFaviconBadgeNotify from '../../../src'
+import useFaviconBadgeNotify from 'favicon-badge-notify'
 import faviconSvg from "./assets/favicon.svg";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
   })
 
   useEffect(() => {
-    drawBadge().then(badge => setFavicon(badge));
+    drawBadge().then((badge: string) => setFavicon(badge));
 
     return () => destroyBadge();
   }, [count]);

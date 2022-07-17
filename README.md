@@ -17,7 +17,7 @@ Favicon Badge Notify implemented as custom function.
 
 ## :rocket: Example
 
-Check our [example](https://react-favicon-badge.vercel.app/)
+Check our [example](https://react-favicon-badge-notify.vercel.app/)
 
 ## :package: Installation
 

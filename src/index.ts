@@ -1,4 +1,4 @@
-export default function useFaviconBadgeNotify ({
+const useFaviconBadgeNotify = ({
   src,
   badgeValue,
   backgroundColor = "red",
@@ -8,7 +8,7 @@ export default function useFaviconBadgeNotify ({
   badgeValue: any;
   backgroundColor?: string;
   textColor?: string;
-}) {
+}) => {
   let faviconSize = 96;
   const canvas = document?.createElement("canvas") || {};
   canvas.width = faviconSize;
@@ -63,3 +63,5 @@ export default function useFaviconBadgeNotify ({
     destroyBadge,
   };
 }
+
+export default useFaviconBadgeNotify;
