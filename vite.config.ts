@@ -12,7 +12,7 @@ module.exports = defineConfig({
       external: ["react"],
       output: {
         globals: {
-          react: "React",
+          react: ["React"],
         },
       },
     },

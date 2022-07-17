@@ -1,43 +1,81 @@
-# React Badge Favicon
+# :boom: Favicon Badge Notification
 
-## Installation
+<p>Custom function adds a favicon and a badge</p>
 
-Requires Node >=14.x
+<div align="center">
 
-Install Yarn:
+[![npm](https://img.shields.io/npm/v/favicon-badge-notification?style=flat-square)](https://www.npmjs.com/package/favicon-badge-notification)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/favicon-badge-notification?style=flat-square)
+![npm](https://img.shields.io/npm/dt/favicon-badge-notification?style=flat-square)
+![GitHub license](https://img.shields.io/npm/l/favicon-badge-notification?style=flat-square)
 
-```bash
-https://yarnpkg.com/lang/en/docs/install/
-```
+</div>
 
-Clone and install Yarn dependencies:
+## :books: Introduction
 
-```bash
-$ git clone https://github.com/jsdeveloperr/react-badge.git
-$ cd react-badge
-$ yarn
-```
+Favicon Badge Notification implemented as custom function.
 
-## Development
+## :rocket: Example
 
-To lift the dev server (default port 3000) with hot module reloading.
+Check our [example](https://favicon-badge-notification.vercel.app/)
 
-```bash
-$ yarn dev
-```
-
-The application can be reached at http://localhost:3000
-
-## Build
-
-To bundle the React application
+## :package: Installation
 
 ```bash
-$ yarn dist
+# install with yarn
+yarn add favicon-badge-notification
+# install with npm
+npm install favicon-badge-notification
 ```
 
-## Linting
+## :sparkles: Reactjs example
 
-```bash
-$ yarn lint
+```js
+import { useState, useEffect } from 'react'
+import { Helmet } from "react-helmet"
+
+import useFaviconBadge from 'favicon-badge-notification'
+import faviconSvg from "./assets/favicon.svg";
+
+function ReactFaviconBadge() {
+  const [count, setCount] = useState(0)
+  const [favicon, setFavicon] = useState(faviconSvg)
+  const { drawBadge, destroyBadge } = useFaviconBadge({
+    src: faviconSvg,
+    badgeValue: count,
+  })
+
+  useEffect(() => {
+    drawBadge().then(badge => setFavicon(badge));
+
+    return () => destroyBadge();
+  }, [count]);
+
+  return (
+    <div className="App">
+      <Helmet>
+        <link rel="icon" type="image/png" sizes="128x128" href={favicon}></link>
+      </Helmet>
+      <header className="App-header">
+        <p className="buttons">
+          <button type="button" className="increase" onClick={() => setCount((count) => count + 1)}>
+            increase
+          </button>
+          <span>{count}</span>
+          <button type="button" className="decrease" onClick={() => count - 1 >= 0 && setCount((count) => count - 1)}>
+            decrease
+          </button>
+        </p>
+      </header>
+    </div>
+  )
+}
+
+export default ReactFaviconBadge
 ```
+
+## License
+
+<div calign="center">
+    🍁 MIT Licensed | Copyright © 2022-present Abdulnasır Olcan and @FaviconBadgeNotification contributors
+</div>

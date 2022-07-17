@@ -1,11 +1,12 @@
 {
-  "name": "react-favicon-badge",
+  "name": "favicon-badge-notification",
   "version": "1.0.0",
-  "description": "React favicon Badge",
+  "description": "favicon Badge",
+  "author": "Abdulnasır OLCAN",
   "license": "MIT",
   "main": "dist/index.umd.js",
   "source": "src/index.ts",
-  "private": true,
+  "types": "index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -13,18 +14,34 @@
     "prepublish": "yarn build"
   },
   "devDependencies": {
-    "@types/node": "^17.0.44",
+    "@types/node": "^18.0.5",
     "typescript": "^4.6.3",
-    "vite": "^2.9.9"
+    "vite": "^3.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jsdeveloperr/react-badge.git"
+    "url": "https://github.com/jsdeveloperr/favicon-badge-notification.git"
   },
+  "bugs": {
+    "url": "https://github.com/jsdeveloperr/favicon-badge-notification/issues"
+  },
+  "homepage": "https://github.com/jsdeveloperr/favicon-badge-notification#readme",
   "keywords": [
     "favicon",
-    "badge",
-    "component"
+    "favicon-badge",
+    "favicon-badge-notification",
+    "favicon-badge-component",
+    "favicon-badge-notification-component",
+    "react-favicon-badge",
+    "react-favicon-badge-notification",
+    "dynamic-favicon-badge",
+    "dynamic-favicon-badge-notification",
+    "component",
+    "badge"
+  ],
+  "files": [
+    "dist/*.js",
+    "*.d.ts"
   ],
   "dependencies": {}
 }
