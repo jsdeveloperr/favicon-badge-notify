@@ -8,13 +8,5 @@ module.exports = defineConfig({
       name: "index",
       fileName: (format) => `index.${format}.js`,
     },
-    rollupOptions: {
-      external: ["react"],
-      output: {
-        globals: {
-          react: ["React"],
-        },
-      },
-    },
   },
 });

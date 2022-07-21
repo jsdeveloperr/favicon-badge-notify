@@ -17,7 +17,7 @@ Favicon Badge Notify implemented as custom function.
 
 ## :rocket: Example
 
-Check our [example](https://react-favicon-badge-notify.vercel.app/)
+Check our 👉 [example](https://react-favicon-badge-notify.vercel.app/)
 
 ## :package: Installation
 
@@ -26,6 +26,8 @@ Check our [example](https://react-favicon-badge-notify.vercel.app/)
 yarn add favicon-badge-notify
 # install with npm
 npm install favicon-badge-notify
+# install with pnpm 
+pnpm add favicon-badge-notify
 ```
 
 ## :sparkles: Reactjs example
@@ -78,8 +80,8 @@ export default ReactFaviconBadgeNotify
     <img src="https://github.com/jsdeveloperr/favicon-badge-notify/blob/master/example/react/src/assets/favicon-badge-notify.png" width="150" alt="Favicon Badge Notify" style="max-width: 100%;"> 
 </p>
 
-## License
+## 📄 License
 
 <div calign="center">
-    🍁 MIT Licensed | Copyright © 2022-present Abdulnasır Olcan and @FaviconBadgeNotification contributors
+    🍁 MIT Licensed | Copyright © 2022-present Abdulnasır Olcan and @FaviconBadgeNotify contributors
 </div>
