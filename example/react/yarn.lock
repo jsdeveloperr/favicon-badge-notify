@@ -538,10 +538,10 @@ estree-walker@^2.0.1:
   resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-2.0.2.tgz#52f010178c2a4c117a7757cfe942adb7d2da4cac"
   integrity sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==
 
-favicon-badge-notify@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/favicon-badge-notify/-/favicon-badge-notify-1.1.1.tgz#5ea3d2de20f63e2dfcc703ef699f723239f81692"
-  integrity sha512-nxhiKj8Xf4/dgVamx+b35WJuGWksFKeIIwvUnSz8uCDW275UUEmmpW5KgN1rMK/zoGIwSf1cW4ug1IMAtHVs9A==
+favicon-badge-notify@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/favicon-badge-notify/-/favicon-badge-notify-1.1.2.tgz#4729477ad68d4eeaac80426465b1c9e8b525511f"
+  integrity sha512-cGN5xufNeh0HSTfAsGmuX/3W9zUva+CvobsN5fNS7J/S7kEQddpGHUVvRC4bvtxqQBsSL2L3p34KGs1dnTEE4g==
 
 fsevents@~2.3.2:
   version "2.3.2"

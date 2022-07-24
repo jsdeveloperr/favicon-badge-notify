@@ -1,6 +1,6 @@
 # 🟠 Favicon Badge Notify
 
-<p>Custom function adds a favicon and a badge</p>
+> <p>Custom function adds a favicon and a badge</p>
 
 <div align="center">
 
