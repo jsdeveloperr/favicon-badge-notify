@@ -15,9 +15,10 @@
 
 Favicon Badge Notify implemented as custom function.
 
-## :rocket: Example
+## :rocket: Examples
 
-Check our 👉 [example](https://react-favicon-badge-notify.vercel.app/)
+Check our Reactjs👉 [example](https://react-favicon-badge-notify.vercel.app/)
+Check our Vuejs👉 [example](https://vue-favicon-badge-notify.vercel.app/)
 
 ## :package: Installation
 
@@ -75,6 +76,8 @@ function ReactFaviconBadgeNotify() {
 
 export default ReactFaviconBadgeNotify
 ```
+
+## :sparkles: Vuejs example
 
 <p align="center" dir="auto">
     <img src="https://github.com/jsdeveloperr/favicon-badge-notify/blob/master/example/react/src/assets/favicon-badge-notify.png" width="150" alt="Favicon Badge Notify" style="max-width: 100%;"> 
