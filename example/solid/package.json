@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@solidjs/meta": "^0.28.0",
-    "favicon-badge-notify": "^1.1.4",
+    "favicon-badge-notify": "^1.1.5",
     "solid-js": "^1.4.7"
   }
 }
