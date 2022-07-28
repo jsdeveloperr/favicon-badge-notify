@@ -21,6 +21,8 @@ Check our Reactjs 👉 [example](https://react-favicon-badge-notify.vercel.app/)
 
 Check our Vuejs 👉 [example](https://vue-favicon-badge-notify.vercel.app/)
 
+Check our Solidjs 👉 [example](https://solid-favicon-badge-notify.vercel.app/)
+
 ## :package: Installation
 
 ```bash
@@ -112,10 +114,8 @@ onBeforeUnmount(() => {
 
 <template>
   <Head>
-    <title>Vue Badge Favicon</title>
     <link rel="icon" type="image/png" sizes="128x128" :href="state.favicon" />
   </Head>
-  <img alt="Vue logo" src="./assets/logo.png" />
   <p class="buttons">
     <button type="button" class="increase" @click="setCount(state.count + 1)">increase</button>
     <span>{{ state.count }}</span>
@@ -123,13 +123,55 @@ onBeforeUnmount(() => {
       decrease
     </button>
   </p>
-  <footer>
-    <p>
-      🍁 MIT Licensed | Copyright © 2022-present Abdulnasır Olcan and @favicon-badge-notify
-      contributors
-    </p>
-  </footer>
 </template>
+```
+
+## :sparkles: Solidjs example
+
+```js
+import { Component, createEffect, createSignal } from 'solid-js';
+import { MetaProvider, Link } from '@solidjs/meta';
+
+import useFaviconBadgeNotify from 'favicon-badge-notify';
+import faviconSvg from './assets/favicon.svg';
+
+const SolidFaviconBadgeNotify: Component = () => {
+  const [count, setCount] = createSignal<number>(0);
+  const [favicon, setFavicon] = createSignal<string>(faviconSvg);
+  const { drawBadge, destroyBadge } = useFaviconBadgeNotify({
+    src: faviconSvg
+  });
+
+  createEffect(() => {
+    drawBadge(count()).then((badge: any) => setFavicon(badge));
+
+    return () => destroyBadge();
+  }, [count()]);
+
+  return (
+    <div class={styles.App}>
+      <MetaProvider>
+        <Link rel="icon" type="image/png" sizes="128x128" href={favicon()} />
+      </MetaProvider>
+      <header class={styles.header}>
+        <p class={styles.buttons}>
+          <button type="button" class={styles.increase} onClick={() => setCount(count() + 1)}>
+            increase
+          </button>
+          <span>{count}</span>
+          <button
+            type="button"
+            class={styles.decrease}
+            onClick={() => count() - 1 >= 0 && setCount(count() - 1)}>
+            decrease
+          </button>
+        </p>
+      </header>
+    </div>
+  );
+};
+
+export default SolidFaviconBadgeNotify;
 ```
 
 <p align="center" dir="auto">

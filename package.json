@@ -1,6 +1,6 @@
 {
   "name": "favicon-badge-notify",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "favicon badge notify",
   "author": "Abdulnasır OLCAN",
   "license": "MIT",
@@ -42,6 +42,10 @@
     "vue-favicon",
     "vue-favicon-badge-notify",
     "vue-favicon-badge-notification",
+    "solid-badge",
+    "solid-favicon",
+    "solid-favicon-badge-notify",
+    "solid-favicon-badge-notification",
     "dynamic-favicon-badge",
     "dynamic-favicon-badge-notify",
     "dynamic-favicon-badge-notification",
