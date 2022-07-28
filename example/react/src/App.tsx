@@ -11,11 +11,10 @@ function App() {
   const [favicon, setFavicon] = useState(faviconSvg);
   const { drawBadge, destroyBadge } = useFaviconBadgeNotify({
     src: faviconSvg,
-    badgeValue: count
   });
 
   useEffect(() => {
-    drawBadge().then((badge: string) => setFavicon(badge));
+    drawBadge(count).then((badge: string) => setFavicon(badge));
 
     return () => destroyBadge();
   }, [count]);
