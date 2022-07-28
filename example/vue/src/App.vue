@@ -33,30 +33,32 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <Head>
-    <title>Vue Badge Favicon</title>
-    <link rel="icon" type="image/png" sizes="128x128" :href="state.favicon" />
-  </Head>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <p class="buttons">
-    <button type="button" class="increase" @click="setCount(state.count + 1)">
-      increase
-    </button>
-    <span>{{ state.count }}</span>
-    <button
-      type="button"
-      class="decrease"
-      @click="state.count - 1 >= 0 && setCount(state.count - 1)"
-    >
-      decrease
-    </button>
-  </p>
-  <footer>
-    <p>
-      🍁 MIT Licensed | Copyright © 2022-present Abdulnasır Olcan and
-      @favicon-badge-notify contributors
+  <div>
+    <Head>
+      <title>Vue Badge Favicon</title>
+      <link rel="icon" type="image/png" sizes="128x128" :href="state.favicon" />
+    </Head>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <p class="buttons">
+      <button type="button" class="increase" @click="setCount(state.count + 1)">
+        increase
+      </button>
+      <span>{{ state.count }}</span>
+      <button
+        type="button"
+        class="decrease"
+        @click="state.count - 1 >= 0 && setCount(state.count - 1)"
+      >
+        decrease
+      </button>
     </p>
-  </footer>
+    <footer>
+      <p>
+        🍁 MIT Licensed | Copyright © 2022-present Abdulnasır Olcan and
+        @favicon-badge-notify contributors
+      </p>
+    </footer>
+  </div>
 </template>
 
 <style>
