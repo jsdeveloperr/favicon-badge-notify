@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@vueuse/head": "^0.7.7",
+    "favicon-badge-notify": "^1.1.3",
     "vue": "^3.2.37"
   },
   "devDependencies": {
