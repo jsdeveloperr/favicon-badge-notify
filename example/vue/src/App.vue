@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onBeforeUnmount, watch } from 'vue';
 import { Head } from '@vueuse/head';
-import useFaviconBadgeNotify from '../../../src';
+import useFaviconBadgeNotify from 'favicon-badge-notify';
 
 const favicon = ref('/favicon.svg');
 const count = ref(0);
@@ -19,7 +19,7 @@ const { drawBadge, destroyBadge } = useFaviconBadgeNotify({
 });
 
 watch(count, (count, prevCount) => {
-  drawBadge(count).then((badge) => setFavicon(badge));
+  drawBadge(count).then((badge: any) => setFavicon(badge));
 });
 
 onBeforeUnmount(() => {

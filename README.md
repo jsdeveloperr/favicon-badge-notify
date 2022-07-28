@@ -96,7 +96,7 @@ const { drawBadge, destroyBadge } = useFaviconBadgeNotify({
 });
 
 watch(count, (count, prevCount) => {
-  drawBadge(count).then((badge) => setFavicon(badge));
+  drawBadge(count).then((badge: any) => setFavicon(badge));
 });
 
 onBeforeUnmount(() => {
