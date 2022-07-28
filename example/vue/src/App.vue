@@ -8,8 +8,8 @@ const state = reactive({
   count: 0
 });
 
-const setFavicon = (val: string) => state.favicon = val;
-const setCount = (val: number) => state.count = val;
+const setFavicon = (val: string) => (state.favicon = val);
+const setCount = (val: number) => (state.count = val);
 
 const { drawBadge, destroyBadge } = useFaviconBadgeNotify({
   src: state.favicon
@@ -32,18 +32,20 @@ onBeforeUnmount(() => {
     <title>Vue Badge Favicon</title>
     <link rel="icon" type="image/png" sizes="128x128" :href="state.favicon" />
   </Head>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <p class="buttons">
-    <button type="button" class="increase" @click="setCount(state.count + 1)">increase</button>
-    <span>{{ state.count }}</span>
-    <button
-      type="button"
-      class="decrease"
-      @click="state.count - 1 >= 0 && setCount(state.count - 1)"
-    >
-      decrease
-    </button>
-  </p>
+  <div>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <p class="buttons">
+      <button type="button" class="increase" @click="setCount(state.count + 1)">increase</button>
+      <span>{{ state.count }}</span>
+      <button
+        type="button"
+        class="decrease"
+        @click="state.count - 1 >= 0 && setCount(state.count - 1)"
+      >
+        decrease
+      </button>
+    </p>
+  </div>
   <footer>
     <p>
       🍁 MIT Licensed | Copyright © 2022-present Abdulnasır Olcan and @favicon-badge-notify
