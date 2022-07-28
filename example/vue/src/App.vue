@@ -1,29 +1,24 @@
 <script setup lang="ts">
-import { reactive, onBeforeUnmount, watch } from "vue";
-import { Head } from "@vueuse/head";
-import useFaviconBadgeNotify from "../../../src";
+import { reactive, onBeforeUnmount, watch } from 'vue';
+import { Head } from '@vueuse/head';
+import useFaviconBadgeNotify from 'favicon-badge-notify';
 
 const state = reactive({
-  favicon: "/favicon.svg",
-  count: 0,
+  favicon: '/favicon.svg',
+  count: 0
 });
 
-const setFavicon = (val: string) => {
-  state.favicon = val;
-};
-
-const setCount = (val: number) => {
-  state.count = val;
-};
+const setFavicon = (val: string) => state.favicon = val;
+const setCount = (val: number) => state.count = val;
 
 const { drawBadge, destroyBadge } = useFaviconBadgeNotify({
-  src: state.favicon,
+  src: state.favicon
 });
 
 watch(
   () => state.count,
   (count, prevCount) => {
-    drawBadge(count).then((badge) => setFavicon(badge));
+    drawBadge(count).then((badge: any) => setFavicon(badge));
   }
 );
 
@@ -39,22 +34,20 @@ onBeforeUnmount(() => {
   </Head>
   <img alt="Vue logo" src="./assets/logo.png" />
   <p class="buttons">
-    <button type="button" class="increase" @click="setCount(state.count + 1)">
-      increase
-    </button>
+    <button type="button" class="increase" @click="setCount(state.count + 1)">increase</button>
     <span>{{ state.count }}</span>
     <button
       type="button"
       class="decrease"
-      @click="count - 1 >= 0 && setCount(state.count - 1)"
+      @click="state.count - 1 >= 0 && setCount(state.count - 1)"
     >
       decrease
     </button>
   </p>
   <footer>
     <p>
-      🍁 MIT Licensed | Copyright © 2022-present Abdulnasır Olcan and
-      @favicon-badge-notify contributors
+      🍁 MIT Licensed | Copyright © 2022-present Abdulnasır Olcan and @favicon-badge-notify
+      contributors
     </p>
   </footer>
 </template>
