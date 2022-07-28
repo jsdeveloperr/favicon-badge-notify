@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onBeforeUnmount, watch } from 'vue';
 import { Head } from '@vueuse/head';
-import useFaviconBadgeNotify from 'favicon-badge-notify';
+import useFaviconBadgeNotify from '../../../src';
 
 const favicon = ref('/favicon.svg');
 const count = ref(0);
