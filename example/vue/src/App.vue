@@ -1,26 +1,31 @@
 <script setup lang="ts">
-import { ref, onBeforeUnmount, watch } from 'vue';
-import { Head } from '@vueuse/head';
-import useFaviconBadgeNotify from '../../../src';
+import { reactive, onBeforeUnmount, watch } from "vue";
+import { Head } from "@vueuse/head";
+import useFaviconBadgeNotify from "../../../src";
 
-const favicon = ref('/favicon.svg');
-const count = ref(0);
+const state = reactive({
+  favicon: "/favicon.svg",
+  count: 0,
+});
 
 const setFavicon = (val: string) => {
-  favicon.value = val;
+  state.favicon = val;
 };
 
 const setCount = (val: number) => {
-  count.value = val;
+  state.count = val;
 };
 
 const { drawBadge, destroyBadge } = useFaviconBadgeNotify({
-  src: favicon.value
+  src: state.favicon,
 });
 
-watch(count, (count, prevCount) => {
-  drawBadge(count).then((badge) => setFavicon(badge));
-});
+watch(
+  () => state.count,
+  (count, prevCount) => {
+    drawBadge(count).then((badge) => setFavicon(badge));
+  }
+);
 
 onBeforeUnmount(() => {
   destroyBadge();
@@ -30,20 +35,26 @@ onBeforeUnmount(() => {
 <template>
   <Head>
     <title>Vue Badge Favicon</title>
-    <link rel="icon" type="image/png" sizes="128x128" :href="favicon" />
+    <link rel="icon" type="image/png" sizes="128x128" :href="state.favicon" />
   </Head>
   <img alt="Vue logo" src="./assets/logo.png" />
   <p class="buttons">
-    <button type="button" class="increase" @click="setCount(count + 1)">increase</button>
-    <span>{{ count }}</span>
-    <button type="button" class="decrease" @click="count - 1 >= 0 && setCount(count - 1)">
+    <button type="button" class="increase" @click="setCount(state.count + 1)">
+      increase
+    </button>
+    <span>{{ state.count }}</span>
+    <button
+      type="button"
+      class="decrease"
+      @click="count - 1 >= 0 && setCount(state.count - 1)"
+    >
       decrease
     </button>
   </p>
   <footer>
     <p>
-      🍁 MIT Licensed | Copyright © 2022-present Abdulnasır Olcan and @favicon-badge-notify
-      contributors
+      🍁 MIT Licensed | Copyright © 2022-present Abdulnasır Olcan and
+      @favicon-badge-notify contributors
     </p>
   </footer>
 </template>
