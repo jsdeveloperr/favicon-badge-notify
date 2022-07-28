@@ -79,6 +79,47 @@ export default ReactFaviconBadgeNotify
 
 ## :sparkles: Vuejs example
 
+```vue
+<script setup lang="ts">
+import { ref, onBeforeUnmount, watch } from 'vue';
+import { Head } from '@vueuse/head';
+import useFaviconBadgeNotify from 'favicon-badge-notify';
+
+const favicon = ref('/favicon.svg');
+const count = ref(0);
+
+const setFavicon = (val: string) => favicon.value = val;
+const setCount = (val: number) => count.value = val;
+
+const { drawBadge, destroyBadge } = useFaviconBadgeNotify({
+  src: favicon.value
+});
+
+watch(count, (count, prevCount) => {
+  drawBadge(count).then((badge) => setFavicon(badge));
+});
+
+onBeforeUnmount(() => {
+  destroyBadge();
+});
+</script>
+
+<template>
+  <Head>
+    <title>Vue Badge Favicon</title>
+    <link rel="icon" type="image/png" sizes="128x128" :href="favicon" />
+  </Head>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <p class="buttons">
+    <button type="button" class="increase" @click="setCount(count + 1)">increase</button>
+    <span>{{ count }}</span>
+    <button type="button" class="decrease" @click="count - 1 >= 0 && setCount(count - 1)">
+      decrease
+    </button>
+  </p>
+</template>
+```
+
 <p align="center" dir="auto">
     <img src="https://github.com/jsdeveloperr/favicon-badge-notify/blob/master/example/react/src/assets/favicon-badge-notify.png" width="150" alt="Favicon Badge Notify" style="max-width: 100%;"> 
 </p>
