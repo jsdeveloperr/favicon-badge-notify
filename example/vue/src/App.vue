@@ -46,7 +46,7 @@ onBeforeUnmount(() => {
     <button
       type="button"
       class="decrease"
-      @click="count - 1 >= 0 && setCount(state.count - 1)"
+      @click="state.count - 1 >= 0 && setCount(state.count - 1)"
     >
       decrease
     </button>
