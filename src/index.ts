@@ -1,11 +1,9 @@
 const useFaviconBadgeNotify = ({
   src,
-  badgeValue,
   backgroundColor = "red",
   textColor = "white",
 }: {
   src: string;
-  badgeValue: any;
   backgroundColor?: string;
   textColor?: string;
 }) => {
@@ -16,9 +14,10 @@ const useFaviconBadgeNotify = ({
 
   const context = canvas?.getContext("2d");
   const img = document?.createElement("img");
-  img?.setAttribute("src", src);
+  
+  let imageLoadHandler = () => {};
 
-  const createCanvasContext = () => {
+  const createCanvasContext = (value: any) => {
     context!.drawImage(img, 0, 0, faviconSize, faviconSize);
 
     // Draw Badge Circle
@@ -38,24 +37,28 @@ const useFaviconBadgeNotify = ({
     context!.textAlign = "center";
     context!.textBaseline = "middle";
     context!.fillStyle = textColor;
-    context!.fillText(badgeValue, canvas.width - faviconSize / 3, faviconSize / 3);
+    context!.fillText(value, canvas.width - faviconSize / 3, faviconSize / 3);
   }
 
-  const drawBadge: () => Promise<string> = () => {    
+  const drawBadge: (value: any) => Promise<string> = (badgeValue) => {
+    img?.setAttribute("src", src);
+
     return new Promise((resolve) => {
-      img?.addEventListener('load', () => {
+      imageLoadHandler = () => {
         if (badgeValue && context) {
-          createCanvasContext();
+          createCanvasContext(badgeValue);
           resolve(canvas.toDataURL("image/png"))
         } else {
           resolve(src);
         }
-      })
-    })
-  }
+      }
+
+      img?.addEventListener('load', imageLoadHandler)
+    });
+  };
 
   const destroyBadge = () => {
-    img?.removeEventListener('load', createCanvasContext);
+    img?.removeEventListener('load', imageLoadHandler);
   }
 
   return {
